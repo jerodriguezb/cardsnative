@@ -1,11 +1,26 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableHighlight } from 'react-native';
+import { Title } from './src/components/Title';
 
-export default function App() {
-  return (
+const  App = () => {
+    return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Title title="React Native!!!!"/>
+      <TouchableHighlight
+        activeOpacity={0.6}
+        underlayColor="#DDDDDD"
+        onPress={() => alert('Pressed!')}
+        >
+      <Text> Touch here... </Text>
+      </TouchableHighlight>
+      <StatusBar style='auto' />
+      <Image
+          source={{
+            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
+          }}
+          style={styles.image}
+        />
     </View>
   );
 }
@@ -17,4 +32,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+     width: 300, 
+     height: 300 
+  }
 });
+
+export default App;
