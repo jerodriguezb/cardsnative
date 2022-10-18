@@ -1,16 +1,20 @@
 import React from 'react'
-import { Text, StyleSheet} from 'react-native'
+import { Text, StyleSheet } from 'react-native'
 
 const Title = ({ title }) => {
   return (
-    <Text style={styles.text}> { title } </Text>
+    <Text style={styles.text}> {title} </Text>
   )
 }
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30,
+    color: 'blue',
+    marginTop:40,
+    fontSize: 25,
+    fontWeight: "bold",
     marginBottom: 20,
+    textAlign: 'center',
   }
 
 })
