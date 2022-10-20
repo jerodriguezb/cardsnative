@@ -20,11 +20,11 @@ const App = () => {
   
   return (
     <ScrollView>
-      <Title title="Ricky and Morty Cards!" />
+      <Title title="Ricky and Morty Cards!!" />
       {
         products.map(product => (
           <View key={product.id}>
-            <Card name={product.name} uri={product.image} price={product.id} />
+            <Card name={product.name} uri={product.image} price={product.id} species={product.species}/>
           </View>
         ))
       }

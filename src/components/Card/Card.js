@@ -3,9 +3,12 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 const Card = (props) => {
     return (
-        <View style={styles.container}>
-            <View style={styles.card}>
+        <View style={styles.card}>
+            <View style={styles.containerTitle}>
                 <Text  style={styles.titleCard}> {props.name} </Text>
+                <Text  style={styles.speciesCard}> {props.species} </Text>
+            </View>   
+            <View>
                 <Image source={{ uri: props.uri }} style={styles.image} />
                 <Text style={styles.priceCard}> Precio: ${props.price * 1003} </Text>
             </View>
@@ -13,29 +16,30 @@ const Card = (props) => {
     )
 }
 const styles = StyleSheet.create({
-    container: {
-        padding: 20,
-        backgroundColor: '#fff',
-    },
     card: {
         width: '100%',
         height: 350,
         border: '1px solid black',
+        borderWidth: 3,
         marginBottom: 20,
+        
+    },
+    containerTitle: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 10,
     },
     titleCard: {
         fontSize: 20,
         fontWeight: 'bold',
-        backgroundColor: '#fff',
-        marginHorizontal: 20,
         marginVertical: 15,
-        textAlign: 'center',
+    },
+    speciesCard: {
+        fontSize: 15,
+        marginVertical: 15,
     },
     image: {
-        height: '70%',
-        maxWidth: '100%',
-        maxHeight: '100%',
-        marginHorizontal: 15,
+        height: '70%', // corrección para movil.-
     },
     priceCard: {
         fontSize: 15,
